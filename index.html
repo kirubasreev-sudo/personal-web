@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kiruba Sree</title>
+<title>Kiruba Sree V</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -76,12 +76,13 @@
     text-decoration: none;
     letter-spacing: 0.02em;
   }
-  .nav-links { display: flex; gap: 44px; list-style: none; }
+  .nav-links { display: flex; gap: 32px; list-style: none; }
   .nav-links a {
     font-size: 11px; font-weight: 400;
-    letter-spacing: 0.14em; text-transform: uppercase;
+    letter-spacing: 0.12em; text-transform: uppercase;
     color: var(--muted); text-decoration: none;
     transition: color 0.2s;
+    white-space: nowrap;
   }
   .nav-links a:hover { color: var(--gold); }
 
@@ -274,6 +275,85 @@
     background: var(--gold-dim);
   }
 
+  /* ── EDUCATION ── */
+  .edu-list { display: flex; flex-direction: column; }
+  .edu-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 24px; align-items: baseline;
+    padding: 30px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .edu-row:first-child { border-top: 1px solid var(--line); }
+  .edu-degree {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(17px, 2vw, 21px);
+    font-weight: 700; color: var(--white);
+    margin-bottom: 6px;
+  }
+  .edu-school { font-size: 13px; color: var(--muted); }
+  .edu-years {
+    font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--gold); white-space: nowrap;
+  }
+
+  /* ── EXPERIENCE ── */
+  .exp-stack { display: flex; flex-direction: column; }
+  .exp-row {
+    padding: 32px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .exp-row:first-child { border-top: 1px solid var(--line); }
+  .exp-head {
+    display: flex; justify-content: space-between; align-items: baseline;
+    flex-wrap: wrap; gap: 10px; margin-bottom: 14px;
+  }
+  .exp-role {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(18px, 2.2vw, 22px);
+    font-weight: 700; color: var(--white);
+  }
+  .exp-org {
+    font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--gold);
+  }
+  .exp-list { list-style: none; }
+  .exp-list li {
+    font-size: 13px; color: var(--muted); line-height: 1.75;
+    padding-left: 20px; position: relative; max-width: 700px;
+  }
+  .exp-list li::before {
+    content: '—'; position: absolute; left: 0; color: var(--gold);
+  }
+
+  /* ── ACHIEVEMENTS ── */
+  .ach-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .ach-item {
+    display: flex; gap: 16px; align-items: flex-start;
+    padding: 22px;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    background: var(--black-2);
+    transition: all 0.22s;
+  }
+  .ach-item:hover {
+    border-color: var(--gold);
+    background: var(--gold-dim);
+    transform: translateY(-2px);
+  }
+  .ach-icon {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: var(--gold); font-size: 16px;
+    flex-shrink: 0; line-height: 1.4;
+  }
+  .ach-text { font-size: 13px; color: var(--muted); line-height: 1.65; }
+  .ach-text strong { color: var(--off); font-weight: 400; }
+
   /* ── PROJECTS ── */
   .projects-stack { display: flex; flex-direction: column; }
   .p-row {
@@ -415,6 +495,8 @@
     .about-layout, .contact-wrap { grid-template-columns: 1fr; gap: 40px; }
     .p-row { grid-template-columns: 40px 1fr; }
     .p-arrow { display: none; }
+    .edu-row { grid-template-columns: 1fr; gap: 6px; }
+    .ach-grid { grid-template-columns: 1fr; }
     .footer-wrap { padding: 24px; }
   }
 
@@ -429,10 +511,13 @@
 <div id="cur-ring"></div>
 
 <nav id="nav">
-  <a href="#" class="nav-logo">Kiruba Sree</a>
+  <a href="#" class="nav-logo">Kiruba Sree V</a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
+    <li><a href="#education">Education</a></li>
     <li><a href="#projects">Projects</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#achievements">Achievements</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
@@ -440,7 +525,7 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-center">
-    <p class="hero-eyebrow">Student · Developer · Creator</p>
+    <p class="hero-eyebrow">ECE Student · Web Developer · ML Enthusiast</p>
     <h1 class="hero-name">
       Kiruba<br>
       <span class="italic">Sree</span>
@@ -461,8 +546,8 @@
       <span class="hero-stat-label">Projects Built</span>
     </div>
     <div class="hero-stat">
-      <span class="hero-stat-num">2026</span>
-      <span class="hero-stat-label">Current Year</span>
+      <span class="hero-stat-num">3</span>
+      <span class="hero-stat-label">Internships</span>
     </div>
     <div class="hero-stat">
       <span class="hero-stat-num">∞</span>
@@ -488,23 +573,49 @@
       </h2>
     </div>
     <div class="about-right reveal delay">
-      <p>Hi, I'm <strong>Kiruba Sree</strong> — a student with a passion for technology, design, and creating things from scratch. I love the process of going from zero to something real.</p>
-      <p>I'm constantly learning, constantly building. Whether it's a small script or a full project, I give it everything I've got.</p>
+      <p>Hi, I'm <strong>Kiruba Sree V</strong> — an Electronics & Communication Engineering student at SNS College of Technology with a strong interest in software development, web development, data analysis, and machine learning.</p>
+      <p>I'm constantly learning, constantly building — backed by hands-on experience through internships and hackathons that have taken me from web apps to embedded systems to AI/ML.</p>
       <div class="skills-wrap">
         <p class="skills-heading">Skills & Tools</p>
         <div class="skills-row">
           <span class="s-chip">PYTHON</span>
-          <span class="s-chip">SQL & MYSQL</span>
-          <span class="s-chip">PHP</span>
-          <span class="s-chip">NODEJS</span>
           <span class="s-chip">JAVASCRIPT</span>
+          <span class="s-chip">NODE.JS</span>
+          <span class="s-chip">PHP</span>
+          <span class="s-chip">C</span>
+          <span class="s-chip">SQL & MYSQL</span>
           <span class="s-chip">Git & GitHub</span>
-          <span class="s-chip">Responsive Design</span>
           <span class="s-chip">Problem Solving</span>
-          <span class="s-chip">Teamwork</span>
+          <span class="s-chip">Team Collaboration</span>
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<div class="stripe"></div>
+
+<!-- EDUCATION -->
+<section class="section" id="education">
+  <div class="section-label">Education</div>
+  <div class="edu-list reveal">
+
+    <div class="edu-row">
+      <div>
+        <div class="edu-degree">B.E. — Electronics & Communication Engineering</div>
+        <div class="edu-school">SNS College of Technology</div>
+      </div>
+      <div class="edu-years">2023 – Present</div>
+    </div>
+
+    <div class="edu-row">
+      <div>
+        <div class="edu-degree">HSC & SSLC</div>
+        <div class="edu-school">Graham Staines Matriculation Hr. Sec. School</div>
+      </div>
+      <div class="edu-years">2022 – 2023</div>
+    </div>
+
   </div>
 </section>
 
@@ -515,15 +626,15 @@
   <div class="section-label">Selected Projects</div>
   <div class="projects-stack reveal">
 
-    <a href="#" class="p-row">
+    <a href="https://github.com/kirubasreev-sudo/StudentHub" target="_blank" class="p-row">
       <span class="p-num">I</span>
       <div class="p-info">
-        <h3 class="p-title">Student Registration Form</h3>
-        <p class="p-desc">A fully functional student registration system with form validation, data submission, and server-side processing — built to handle real student data cleanly and securely.</p>
+        <h3 class="p-title">StudentHub</h3>
+        <p class="p-desc">A full-stack student registration and management system — handles enrollment, secure data storage, and record management behind a clean, responsive interface.</p>
         <div class="p-tech-row">
           <span class="p-tech">Node.js</span>
-          <span class="p-tech">JavaScript</span>
-          <span class="p-tech">Form Validation</span>
+          <span class="p-tech">Express.js</span>
+          <span class="p-tech">MySQL</span>
         </div>
       </div>
       <div class="p-arrow">↗</div>
@@ -532,12 +643,12 @@
     <a href="#" class="p-row">
       <span class="p-num">II</span>
       <div class="p-info">
-        <h3 class="p-title">Personal Portfolio Website</h3>
-        <p class="p-desc">This very site — designed and built from scratch with a black aesthetic theme, smooth animations, and fully responsive layout.</p>
+        <h3 class="p-title">Student Performance Analysis</h3>
+        <p class="p-desc">Analyzed student datasets in Python — cleaning raw data, building Matplotlib visualizations, and surfacing insights to support academic performance evaluation.</p>
         <div class="p-tech-row">
-          <span class="p-tech">JavaScript</span>
-          <span class="p-tech">Responsive</span>
-          <span class="p-tech">Animations</span>
+          <span class="p-tech">Python</span>
+          <span class="p-tech">Data Analysis</span>
+          <span class="p-tech">Matplotlib</span>
         </div>
       </div>
       <div class="p-arrow">↗</div>
@@ -546,16 +657,104 @@
     <a href="#" class="p-row">
       <span class="p-num">III</span>
       <div class="p-info">
-        <h3 class="p-title">PHP Login System</h3>
-        <p class="p-desc">A secure login and signup system with session management and basic authentication — a foundational backend project built with PHP.</p>
+        <h3 class="p-title">Smart Bike Speed Control System</h3>
+        <p class="p-desc">A real-time speed regulation system that reads live sensor data and applies programmed logic to enforce safe speed limits automatically, improving rider safety.</p>
         <div class="p-tech-row">
-          <span class="p-tech">PHP</span>
-          <span class="p-tech">JavaScript</span>
-          <span class="p-tech">Sessions</span>
+          <span class="p-tech">Embedded Systems</span>
+          <span class="p-tech">Real-Time Logic</span>
+          <span class="p-tech">Automation</span>
         </div>
       </div>
       <div class="p-arrow">↗</div>
     </a>
+
+  </div>
+</section>
+
+<div class="stripe"></div>
+
+<!-- EXPERIENCE -->
+<section class="section" id="experience">
+  <div class="section-label">Experience</div>
+  <div class="exp-stack reveal">
+
+    <div class="exp-row">
+      <div class="exp-head">
+        <div class="exp-role">Web Development Intern</div>
+        <div class="exp-org">Appac Media Technologies · R.S. Puram</div>
+      </div>
+      <ul class="exp-list">
+        <li>Built a web-based StudentHub application using Node.js, PHP, HTML, and CSS.</li>
+        <li>Implemented student registration and record management functionality.</li>
+        <li>Worked across frontend design and backend development for a responsive web app.</li>
+        <li>Integrated database operations and supported testing, debugging, and deployment.</li>
+      </ul>
+    </div>
+
+    <div class="exp-row">
+      <div class="exp-head">
+        <div class="exp-role">Intern</div>
+        <div class="exp-org">Crapersoft</div>
+      </div>
+      <ul class="exp-list">
+        <li>Worked on data processing, debugging, and real-time application testing.</li>
+        <li>Interfaced software with hardware using C.</li>
+      </ul>
+    </div>
+
+    <div class="exp-row">
+      <div class="exp-head">
+        <div class="exp-role">AICTE Virtual Intern</div>
+        <div class="exp-org">Artificial Intelligence & Machine Learning</div>
+      </div>
+      <ul class="exp-list">
+        <li>Learned AI/ML fundamentals and performed basic data analysis.</li>
+        <li>Gained hands-on exposure to Python-based machine learning concepts.</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<div class="stripe"></div>
+
+<!-- ACHIEVEMENTS -->
+<section class="section" id="achievements">
+  <div class="section-label">Achievements</div>
+  <div class="ach-grid reveal">
+
+    <div class="ach-item">
+      <span class="ach-icon">✦</span>
+      <span class="ach-text"><strong>Finalist</strong> — Smart India Hackathon (SIH), GITAM University</span>
+    </div>
+    <div class="ach-item">
+      <span class="ach-icon">✦</span>
+      <span class="ach-text"><strong>Runner-up</strong> — Zygen Paper Presentation, SREC</span>
+    </div>
+    <div class="ach-item">
+      <span class="ach-icon">✦</span>
+      <span class="ach-text"><strong>Presenter</strong> — Mequest Paper Presentation, SRCT</span>
+    </div>
+    <div class="ach-item">
+      <span class="ach-icon">✦</span>
+      <span class="ach-text"><strong>Presenter</strong> — DRDO-sponsored National Conference, SNS</span>
+    </div>
+    <div class="ach-item">
+      <span class="ach-icon">✦</span>
+      <span class="ach-text"><strong>Participant</strong> — Electronthon Hackathon</span>
+    </div>
+    <div class="ach-item">
+      <span class="ach-icon">✦</span>
+      <span class="ach-text"><strong>Volunteer</strong> — Drug Awareness Program, RRC</span>
+    </div>
+    <div class="ach-item">
+      <span class="ach-icon">✦</span>
+      <span class="ach-text"><strong>All-Rounder Nominee</strong> — 2025</span>
+    </div>
+    <div class="ach-item">
+      <span class="ach-icon">✦</span>
+      <span class="ach-text"><strong>Certifications</strong> — Completed multiple certification courses</span>
+    </div>
 
   </div>
 </section>
@@ -575,20 +774,20 @@
     <div class="reveal delay">
       <p class="contact-sub">Open to internships, collaborations, and interesting conversations. Don't be a stranger.</p>
       <div class="c-links">
-        <a href="mailto:kirubasree@email.com" class="c-link">
+        <a href="mailto:kirubsreevs@gmail.com" class="c-link">
           <div class="c-icon">✉</div>
           <span class="c-label">Email</span>
-          <span class="c-val">kirubasree@email.com</span>
+          <span class="c-val">kirubsreevs@gmail.com</span>
         </a>
-        <a href="https://linkedin.com" target="_blank" class="c-link">
-          <div class="c-icon">in</div>
-          <span class="c-label">LinkedIn</span>
-          <span class="c-val">/in/kirubasree</span>
-        </a>
-        <a href="https://github.com" target="_blank" class="c-link">
+        <a href="https://github.com/kirubasreev-sudo" target="_blank" class="c-link">
           <div class="c-icon">⌥</div>
           <span class="c-label">GitHub</span>
-          <span class="c-val">github.com/kirubasree</span>
+          <span class="c-val">github.com/kirubasreev-sudo</span>
+        </a>
+        <a href="https://linkedin.com/in/your-handle" target="_blank" class="c-link">
+          <div class="c-icon">in</div>
+          <span class="c-label">LinkedIn</span>
+          <span class="c-val">linkedin.com/in/your-handle</span>
         </a>
       </div>
     </div>
@@ -596,7 +795,7 @@
 </section>
 
 <div class="footer-wrap">
-  <p>© 2026 <span>Kiruba Sree.</span> All rights reserved.</p>
+  <p>© 2026 <span>Kiruba Sree V.</span> All rights reserved.</p>
   <p>Made with <span>♡</span></p>
 </div>
 
@@ -612,7 +811,7 @@
   (function loop(){ rx+=(mx-rx)*0.13; ry+=(my-ry)*0.13;
     ring.style.left=rx+'px'; ring.style.top=ry+'px';
     requestAnimationFrame(loop); })();
-  document.querySelectorAll('a,.s-chip,.p-row').forEach(el=>{
+  document.querySelectorAll('a,.s-chip,.p-row,.ach-item').forEach(el=>{
     el.addEventListener('mouseenter',()=>ring.classList.add('big'));
     el.addEventListener('mouseleave',()=>ring.classList.remove('big'));
   });
