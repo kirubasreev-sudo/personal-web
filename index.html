@@ -9,7 +9,7 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --bg:#0e0e0e;--bg2:#141414;--bg3:#1a1a1a;
-  --lime:#b8ff57;--lime2:rgba(184,255,87,0.08);--lime3:rgba(184,255,87,0.15);
+  --lime:#f5c518;--lime2:rgba(245,197,24,0.08);--lime3:rgba(245,197,24,0.15);
   --white:#f0ede6;--muted:#5a5a5a;--mid:#2e2e2e;
   --mono:'JetBrains Mono',monospace;--display:'Syne',sans-serif;
 }
@@ -31,7 +31,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:cen
 .nav-menu li:last-child a{border-right:1px solid var(--mid)}
 section{padding:7rem 3rem}
 .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding-top:9rem;position:relative;border-bottom:1px solid var(--mid)}
-.hero-grid-line{position:absolute;top:0;bottom:0;width:1px;background:rgba(184,255,87,0.04)}
+.hero-grid-line{position:absolute;top:0;bottom:0;width:1px;background:rgba(245,197,24,0.04)}
 .hero-grid-line:nth-child(1){left:33.33%}
 .hero-grid-line:nth-child(2){left:66.66%}
 .hero-tag{font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--lime);margin-bottom:2.5rem;display:flex;align-items:center;gap:1rem}
@@ -62,7 +62,7 @@ section{padding:7rem 3rem}
 .kv-row{display:flex;border-bottom:1px solid var(--mid);padding:0.9rem 0}
 .kv-key{font-size:9px;letter-spacing:0.16em;text-transform:uppercase;color:var(--muted);width:100px;flex-shrink:0;padding-top:2px}
 .kv-val{font-size:12px;color:var(--white);line-height:1.7}
-.kv-val .tag{display:inline-block;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;padding:2px 8px;border:1px solid rgba(184,255,87,0.3);color:var(--white);margin:2px 3px 2px 0;transition:all 0.15s;cursor:default}
+.kv-val .tag{display:inline-block;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;padding:2px 8px;border:1px solid rgba(245,197,24,0.3);color:var(--white);margin:2px 3px 2px 0;transition:all 0.15s;cursor:default}
 .kv-val .tag:hover{border-color:var(--lime);color:var(--lime);background:var(--lime2)}
 .terminal-box{background:var(--bg2);border:1px solid var(--mid);padding:1.5rem}
 .term-bar{display:flex;gap:6px;margin-bottom:1.25rem;align-items:center}
@@ -85,7 +85,7 @@ section{padding:7rem 3rem}
 .p-item:hover .p-title{color:var(--lime)}
 .p-desc{font-size:12px;color:var(--muted);line-height:1.75;max-width:520px;margin-bottom:0.75rem}
 .p-tags{display:flex;gap:6px;flex-wrap:wrap}
-.p-tag{font-size:9px;letter-spacing:0.1em;text-transform:uppercase;padding:2px 8px;border:1px solid rgba(184,255,87,0.25);color:var(--lime)}
+.p-tag{font-size:9px;letter-spacing:0.1em;text-transform:uppercase;padding:2px 8px;border:1px solid rgba(245,197,24,0.25);color:var(--lime)}
 .p-arrow{width:40px;height:40px;border:1px solid var(--mid);display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--muted);transition:all 0.15s;position:relative;z-index:1}
 .p-item:hover .p-arrow{border-color:var(--lime);color:var(--lime);background:var(--lime2)}
 .experience{border-bottom:1px solid var(--mid)}
@@ -297,7 +297,7 @@ footer span{color:var(--lime)}
       <div class="c-items">
         <a href="mailto:kirubsreevs@gmail.com" class="c-item"><span class="c-prefix">Email</span><span class="c-label">kirubsreevs@gmail.com</span><span class="c-hint">↗</span></a>
         <a href="https://github.com/kirubasreev-sudo" target="_blank" class="c-item"><span class="c-prefix">GitHub</span><span class="c-label">github.com/kirubasreev-sudo</span><span class="c-hint">↗</span></a>
-        <a href="#" class="c-item"><span class="c-prefix">LinkedIn</span><span class="c-label">Add your LinkedIn handle here</span><span class="c-hint">↗</span></a>
+        <a href="https://linkedin.com/in/kiruba-sree-velmurugan" target="_blank" class="c-item"><span class="c-prefix">LinkedIn</span><span class="c-label">linkedin.com/in/kiruba-sree-velmurugan</span><span class="c-hint">↗</span></a>
       </div>
     </div>
   </div>
@@ -320,7 +320,6 @@ const t=setInterval(()=>{
   if(p>=100){p=100;clearInterval(t);setTimeout(()=>{loader.classList.add('gone')},300)}
   bar.style.width=p+'%';cnt.textContent=Math.floor(p)+'%';
 },40);
-window.addEventListener('scroll',()=>{});
 const obs=new IntersectionObserver(entries=>{
   entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on')}});
 },{threshold:0.08});
